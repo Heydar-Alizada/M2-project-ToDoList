@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto;
+}
+
+h1{
+    font-size: 150%;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.button-div{
+    margin-bottom: 20px;
+}
+
+.wrapper{
+    text-align: center;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    border: solid lightgrey;
+    border-radius: 10px;
+    width: 336px;
+    max-width: 336px;
+    min-width: 150px;
+    overflow: hidden;
+    
+}
+
+button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.line{
+    height: 28px;
+    background-color: #FFDC40;
+    
+}
+
+.text{
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+    outline: none;
+    width: 82%;
+    border: none;
+}
+
+.button{
+    width: 25%;
+}
+
+img{
+    width: 100%;
+   
+}
+
+.sort-div{
+    width: 5%;
+}
+
+.button-div{
+    margin-top: 5%;
+}
+
+.text-div{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    position: relative;
+    border: solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: left;
+}
+
+.delete-button{
+    color: #C4C4C4;
+    background-color: white;
+    border: solid #C4C4C4;
+    border-radius: 50%;
+    size: 1px;
+    position: absolute;
+    right: 9px;
+    top: 3px;
+    font-size: 10px;
+    
+}
+
+.delete-button-form{
+    width: 7%;
+    display: inline-block;
+    position: absolute;
+    right: 10%; 
+    top: 25%;
+    cursor: pointer;
+    overflow: none;
+}
+
+
+.sort-image{
+    width: 8%;
+    display: inline-block;
+    position: absolute;
+    right: 9%;
+    top: -60%;
+    cursor: pointer;
+}
+
+.sort-image:hover{
+    width: 9%;
+}
+
+.add-button-circle{
+    background-color: #AA68FE;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    padding-top: 12px;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.add-button{
+    position: relative;
+    background-color: #9953F1;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    padding-top: 12px;
+    padding-right: 30px;
+    text-align: right;
+    font-size: 14px;
+    color: white;
+}
+
+.selected{
+    opacity: 0.6;
+}
+
+ul{
+    padding-left: 27px;
+    font-size: 14px;
+    
+}
+
+li{
+    list-style-type: none; 
+    margin-bottom: 24px;
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    cursor: grab;
+    
+}
+
+.list-num{
+    color: grey;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.div-list{
+    width: 80%;
+    border: lightgrey solid;
+    border-radius: 10px;
+    margin: 10px auto 10px auto;
+    text-align: left;
+    overflow:hidden;
+    display: none;
+}
+
+.list-text{
+    flex-basis: 90%;
+    max-width: 85%;
+    word-break: break-all
+}
+
+.list-image{
+    flex-basis: 10%;
+    width: 20px;
+    overflow: none;
+    cursor: pointer;
+}
+
+
+
+.add-button:hover .add-button-circle{
+    color: black;
+   
+
+}
+
+.add-button:hover{
+    color: black;
+    
+}
+
+.click-add-button{
+    background-color: rgb(111, 186, 111);
+    box-shadow: 2px 2px 2px 2px green ;
+}
+
+.click-add-button-error{
+    background-color: rgb(224, 117, 117);
+}
+
+.text-delete-img{
+    border: solid 1px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: lightgray;
+    border-style: solid;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.text-delete-img:hover{
+    background-color: #9953F1;
+    color: white;
+}
