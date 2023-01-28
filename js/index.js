@@ -1,13 +1,10 @@
 // VARIABLE AND CONSTANT
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
-const textDelButton = document.querySelector('.delete-button-form')
 const addDiv = document.querySelector('.add-button');
-const addButton  = document.querySelector('button');
 const text = document.querySelector('.text');
 const listNum = document.querySelector('.list-num');
 let li = document.getElementsByTagName('li');
-let imageSpan = document.getElementsByClassName('list-image');
 let textDelImg = document.querySelector('.text-delete-img');
 let matrix = [];
 const divList = document.querySelector('.div-list');
@@ -38,11 +35,7 @@ textDelImg.addEventListener('mousedown', clearText);
 // FUNCTIONS
 
 function refreshMatrix(){
-    if(matrix.length == 0){
-        divList.style.display = 'none'
-    }else{
-        divList.style.display = 'block'
-    }
+    matrix.length == 0 ? divList.style.display = 'none' : divList.style.display = 'block';
 
     list.innerHTML ='';
     for(key of matrix){
@@ -115,24 +108,24 @@ function listToMatrix(){
 
 // SORT
 
-sortBtn.addEventListener('click', sortAZ);
+sortBtn.addEventListener('click', sortAsc);
 
-function sortAZ(event){
+function sortAsc(event){
   if(matrix.length > 1){
     matrix.sort((a, b) => a.localeCompare(b));
     refreshMatrix();
     sortBtn.innerHTML = ` <img src="image/sort-on-1.png" alt="sort">`;
-    sortBtn.removeEventListener('click', sortAZ);
-    sortBtn.addEventListener('click', sortZA)
+    sortBtn.removeEventListener('click', sortAsc);
+    sortBtn.addEventListener('click', sortDesc)
   }
 }
 
-function sortZA(event){
+function sortDesc(event){
   matrix.sort((a, b) => b.localeCompare(a));
   refreshMatrix();
   sortBtn.innerHTML = ` <img src="image/sort-on-2.png" alt="sort">`;
-  sortBtn.removeEventListener('click', sortZA);
-  sortBtn.addEventListener('click', sortAZ)
+  sortBtn.removeEventListener('click', sortDesc);
+  sortBtn.addEventListener('click', sortAsc)
 }
 
 
