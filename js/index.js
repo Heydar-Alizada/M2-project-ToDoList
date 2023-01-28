@@ -13,19 +13,18 @@ let matrix = [];
 const divList = document.querySelector('.div-list');
 const listDelBtn = document.getElementsByClassName('list-delete-button');
 const sortBtn = document.querySelector('.sort-image');
-let az = document.querySelector('.sortAZ');
-const notSort = document.querySelector('.notSort');
-
+let dataText;
 
 
 // ADD EVENT LISTENERS
-addButton.addEventListener('click', addToMatrix);
 
-document.addEventListener('keyup', (event) =>{
-    if(event.key == 'Enter'){
-       addToMatrix();
-    }
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = new FormData(form);
+  dataText = data.get('text');
+  addToMatrix();
 })
+
 
 textDelImg.addEventListener('mousedown', clearText);
 
@@ -50,7 +49,6 @@ function refreshMatrix(){
         list.insertAdjacentHTML('beforeend',`<li class="tasks__item" draggable="true"><span class="list-text">${key}</span><div class="text-delete-img list-delete-button">X</div></span></li>`);
     }
 
-    const listDelBtn = document.querySelectorAll('.list-delete-button')
     listNumChange();
     deleteList();
     sortBtn.innerHTML = `<img src="image/sort-off-2.png" alt="sort">`
@@ -60,8 +58,8 @@ function refreshMatrix(){
 }
 
 function addToMatrix(){
-    if (text.value != 0){ 
-        matrix.push(text.value)
+    if (dataText.trim().length != 0){ 
+        matrix.push(dataText)
         addDiv.innerHTML = 'Добавленно';
         addDiv.classList.add('click-add-button');
         
@@ -140,9 +138,6 @@ function sortZA(event){
 
 
 
-
-
-
 //      DRAG & DROP--------------------------------------------------------------
 
 list.addEventListener(`dragstart`, (evt) => {
@@ -192,6 +187,7 @@ list.addEventListener(`dragend`, (evt) => {
     list.insertBefore(activeElement, nextElement);
 
     listToMatrix()
+    refreshMatrix();
   });
 
 
